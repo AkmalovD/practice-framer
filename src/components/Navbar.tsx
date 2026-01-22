@@ -3,7 +3,8 @@
 import logo from '@/public/logo.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Menu } from 'lucide-react'
+import { Menu, CircleX } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
 const Navbar: React.FC = () => {
@@ -70,17 +71,65 @@ const Navbar: React.FC = () => {
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-label='Toggle menu'
                     >
-                        <Menu/>
+                        {isMobileMenuOpen ? (
+                            <CircleX/>
+                        ) : (
+                            <Menu/>
+                        )}
                     </button>
                 </div>
             </div>
 
             {/* Mobile menu */}
-            {isMobileMenuOpen && (
-                <div className='lg:hidden'>
-
-                </div>
-            )}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div 
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className='lg:hidden boreder-t border-gray-100 bg-white'
+                    >
+                        <div className='px-4 py4 space-y-3'>
+                            <Link
+                                href='#features'
+                                className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Features
+                            </Link>
+                            <Link
+                                href='#benefits'
+                                className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Benefits
+                            </Link>
+                            <Link
+                                href='#pricing'
+                                className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Pricing
+                            </Link>
+                            <Link
+                                href='/blog-page'
+                                className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Blog
+                            </Link>
+                            <Link
+                                href='/contact-us'
+                                className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                Contact Us
+                            </Link>
+                            <button className='w-full mt-2 px-6 py-2.5 bg-[#1A1615] text-white rounded-full font-medium hover:bg-[#2A2625] transition-colors'></button>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     )
 }
