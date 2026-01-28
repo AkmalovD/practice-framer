@@ -17,6 +17,27 @@ const Navbar: React.FC = () => {
 
     return (
         <>
+            <style jsx>{`
+                .nav-link {
+                    font-size: 20px;
+                }
+                .logo-text {
+                    font-size: 24px;
+                }
+                .logo-image {
+                    width: 32px;
+                    height: 32px;
+                }
+                .cta-button {
+                    padding: 10px 24px;
+                    font-size: 16px;
+                    transition: padding 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+                .cta-button.scrolled {
+                    padding: 12px 28px;
+                }
+            `}</style>
+
             {/* Desktop Navbar */}
             <motion.nav 
                 className='hidden lg:block fixed top-0 left-0 right-0 z-50'
@@ -35,7 +56,7 @@ const Navbar: React.FC = () => {
                 <motion.div
                     className='mx-auto rounded-[40px] overflow-hidden border border-solid'
                     animate={{
-                        maxWidth: isScrolled ? '820px' : '1240px',
+                        maxWidth: isScrolled ? '1100px' : '1240px',
                     }}
                     style={{
                         backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0)',
@@ -52,10 +73,10 @@ const Navbar: React.FC = () => {
                         <motion.div 
                             className='flex items-center justify-between'
                             animate={{
-                                paddingTop: isScrolled ? '8px' : '12px',
-                                paddingBottom: isScrolled ? '8px' : '12px',
-                                paddingLeft: isScrolled ? '8px' : '32px',
-                                paddingRight: isScrolled ? '8px' : '16px',
+                                paddingTop: isScrolled ? '14px' : '12px',
+                                paddingBottom: isScrolled ? '14px' : '12px',
+                                paddingLeft: isScrolled ? '24px' : '32px',
+                                paddingRight: isScrolled ? '12px' : '16px',
                             }}
                             transition={{
                                 duration: 0.5,
@@ -63,125 +84,63 @@ const Navbar: React.FC = () => {
                             }}
                         >
                             {/* Logo */}
-                            <motion.div 
-                                className='flex items-center gap-2'
-                                animate={{
-                                    opacity: 1,
-                                }}
-                                transition={{ duration: 0.3, ease: 'easeOut' }}
-                            >
-                                <motion.div
-                                    animate={{
-                                        width: isScrolled ? 22 : 28,
-                                        height: isScrolled ? 22 : 28,
-                                    }}
-                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                >
+                            <div className='flex items-center gap-2'>
+                                <div className='logo-image'>
                                     <Image
                                         src='/logo.svg'
                                         alt='Logo'
-                                        width={isScrolled ? 22 : 28}
-                                        height={isScrolled ? 22 : 28}
-                                        className='transition-all duration-500'
+                                        width={32}
+                                        height={32}
                                     />
-                                </motion.div>
-                                <motion.span 
-                                    className='font-semibold text-[#1A1615]'
-                                    animate={{
-                                        fontSize: isScrolled ? '16px' : '18px',
-                                    }}
-                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                >
+                                </div>
+                                <span className='logo-text font-semibold text-[#1A1615]'>
                                     Dreelio
-                                </motion.span>
-                            </motion.div>
+                                </span>
+                            </div>
 
                             {/* Navigation Links */}
                             <motion.div 
                                 className='flex items-center'
                                 animate={{
-                                    gap: isScrolled ? '20px' : '28px',
+                                    gap: isScrolled ? '32px' : '28px',
                                 }}
                                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                             >
-                                <motion.div
-                                    animate={{
-                                        fontSize: isScrolled ? '14px' : '15px',
-                                    }}
-                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                <Link
+                                    href='#features'
+                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-large'
                                 >
-                                    <Link
-                                        href='#features'
-                                        className='text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
-                                    >
-                                        Features
-                                    </Link>
-                                </motion.div>
-                                <motion.div
-                                    animate={{
-                                        fontSize: isScrolled ? '14px' : '15px',
-                                    }}
-                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                    Features
+                                </Link>
+                                <Link 
+                                    href='#benefits'
+                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
                                 >
-                                    <Link 
-                                        href='#benefits'
-                                        className='text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
-                                    >
-                                        Benefits
-                                    </Link>
-                                </motion.div>
-                                <motion.div
-                                    animate={{
-                                        fontSize: isScrolled ? '14px' : '15px',
-                                    }}
-                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                    Benefits
+                                </Link>
+                                <Link 
+                                    href='#pricing'
+                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
                                 >
-                                    <Link 
-                                        href='#pricing'
-                                        className='text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
-                                    >
-                                        Pricing
-                                    </Link>
-                                </motion.div>
-                                <motion.div
-                                    animate={{
-                                        fontSize: isScrolled ? '14px' : '15px',
-                                    }}
-                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                    Pricing
+                                </Link>
+                                <Link 
+                                    href='/blog-page'
+                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
                                 >
-                                    <Link 
-                                        href='/blog-page'
-                                        className='text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
-                                    >
-                                        Blog
-                                    </Link>
-                                </motion.div>
-                                <motion.div
-                                    animate={{
-                                        fontSize: isScrolled ? '14px' : '15px',
-                                    }}
-                                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                    Blog
+                                </Link>
+                                <Link 
+                                    href='/contact-us'
+                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
                                 >
-                                    <Link 
-                                        href='/contact-us'
-                                        className='text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
-                                    >
-                                        Contact Us
-                                    </Link>
-                                </motion.div>
+                                    Contact Us
+                                </Link>
                             </motion.div>
 
                             {/* CTA Button */}
                             <motion.button 
-                                className='bg-[#1A1615] text-white rounded-full font-medium hover:bg-[#2A2625] transition-colors'
-                                animate={{
-                                    paddingLeft: isScrolled ? '20px' : '24px',
-                                    paddingRight: isScrolled ? '20px' : '24px',
-                                    paddingTop: isScrolled ? '8px' : '10px',
-                                    paddingBottom: isScrolled ? '8px' : '10px',
-                                    fontSize: isScrolled ? '14px' : '15px',
-                                }}
-                                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                className={`cta-button bg-[#1A1615] text-white rounded-full font-medium hover:bg-[#2A2625] transition-colors ${isScrolled ? 'scrolled' : ''}`}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >

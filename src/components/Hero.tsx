@@ -67,7 +67,7 @@ const Hero = () => {
                 >
                     <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                         <Image
-                            src="/dashboard-mockup.png"
+                            src="/Hero.webp"
                             alt="Dreelio Dashboard"
                             fill
                             className="object-cover"
