@@ -11,7 +11,6 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white" />
 
             {/* Floating decorative gradient blobs */}
-            {/* Floating decorative gradient blobs */}
             <div className="absolute top-0 -left-32 w-[600px] h-[600px] bg-gradient-to-br from-violet-200/25 via-purple-200/25 to-transparent rounded-full mix-blend-normal filter blur-3xl animate-blob" />
             <div className="absolute top-20 -right-32 w-[600px] h-[600px] bg-gradient-to-br from-blue-200/25 via-cyan-200/25 to-transparent rounded-full mix-blend-normal filter blur-3xl animate-blob animation-delay-2000" />
             <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-gradient-to-br from-pink-200/20 via-rose-200/20 to-transparent rounded-full mix-blend-normal filter blur-3xl animate-blob animation-delay-4000" />
