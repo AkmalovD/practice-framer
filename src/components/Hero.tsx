@@ -4,6 +4,7 @@ import { section } from "framer-motion/client"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
+// import { runde } from "../app/fonts"
 
 const Hero = () => {
     return (
@@ -17,7 +18,7 @@ const Hero = () => {
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-24">
                 {/* Hero Content */}
-                <div className="text-center max-w-5xl mx-auto space-y-8">
+                <div className="text-center max-w-3xl mx-auto space-y-8">
 
                     {/* Headline */}
                     <motion.h1

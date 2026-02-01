@@ -20,6 +20,12 @@ const Navbar: React.FC = () => {
             <style jsx>{`
                 .nav-link {
                     font-size: 20px;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    transition: background-color 0.3s ease;
+                }
+                .nav-link:hover {
+                    background-color: rgba(26, 22, 21, 0.05);
                 }
                 .logo-text {
                     font-size: 24px;
@@ -29,12 +35,16 @@ const Navbar: React.FC = () => {
                     height: 32px;
                 }
                 .cta-button {
-                    padding: 10px 24px;
+                    padding: 0 24px;
                     font-size: 16px;
-                    transition: padding 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                 }
                 .cta-button.scrolled {
-                    padding: 12px 28px;
+                    padding: 0 28px;
                 }
             `}</style>
 
@@ -108,31 +118,31 @@ const Navbar: React.FC = () => {
                             >
                                 <Link
                                     href='#features'
-                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-large'
+                                    className='nav-link text-[#1A1615] transition-colors font-large'
                                 >
                                     Features
                                 </Link>
                                 <Link 
                                     href='#benefits'
-                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
+                                    className='nav-link text-[#1A1615] transition-colors font-medium'
                                 >
                                     Benefits
                                 </Link>
                                 <Link 
                                     href='#pricing'
-                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
+                                    className='nav-link text-[#1A1615] transition-colors font-medium'
                                 >
                                     Pricing
                                 </Link>
                                 <Link 
                                     href='/blog-page'
-                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
+                                    className='nav-link text-[#1A1615] transition-colors font-medium'
                                 >
                                     Blog
                                 </Link>
                                 <Link 
                                     href='/contact-us'
-                                    className='nav-link text-[#1A1615] hover:text-gray-600 transition-colors font-medium'
+                                    className='nav-link text-[#1A1615] transition-colors font-medium'
                                 >
                                     Contact Us
                                 </Link>
