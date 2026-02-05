@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
 
             {/* Desktop Navbar */}
             <nav
-                className={`hidden h-16 lg:block fixed top-0 left-0 right-0 z-50 navbar-container ${isScrolled ? 'scrolled' : 'not-scrolled'}`}
+                className={`hidden h-14 lg:block fixed top-0 left-0 right-0 z-50 navbar-container ${isScrolled ? 'scrolled' : 'not-scrolled'}`}
             >
                 <div className={`navbar-inner ${isScrolled ? 'scrolled' : 'not-scrolled'}`}>
                     <div className={`navbar-content ${isScrolled ? 'scrolled' : 'not-scrolled'}`}>
