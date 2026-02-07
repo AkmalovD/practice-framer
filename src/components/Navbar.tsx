@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { useState } from 'react'
+import GlareHover from './GlareHover'
 
 const Navbar: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -20,12 +21,7 @@ const Navbar: React.FC = () => {
             <style jsx>{`
                 .nav-link {
                     font-size: 20px;
-                    padding: 8px 16px;
-                    border-radius: 20px;
                     transition: background-color 0.3s ease;
-                }
-                .nav-link:hover {
-                    background-color: rgba(26, 22, 21, 0.05);
                 }
                 .logo-text {
                     font-size: 24px;
@@ -86,10 +82,12 @@ const Navbar: React.FC = () => {
                     transition: padding 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                 }
                 .navbar-content.scrolled {
-                    padding: 14px 12px 14px 24px;
+                    padding: 8px 6px 8px 24px;
+                    height: 70px;
                 }
                 .navbar-content.not-scrolled {
-                    padding: 12px 16px 12px 32px;
+                    padding: 5px 16px 5px 32px;
+                    height: 70px;
                 }
                 
                 /* Nav links container */
@@ -98,6 +96,7 @@ const Navbar: React.FC = () => {
                     align-items: center;
                     transition: gap 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                     font-size: 18px;
+                    height: 40px;
                 }
                 .nav-links.scrolled {
                     gap: 32px;
@@ -123,61 +122,150 @@ const Navbar: React.FC = () => {
                                     height={32}
                                 />
                             </div>
-                            <span className='logo-text font-semibold text-[#1A1615]'>
-                                Dreelio
-                            </span>
+                                <span className='logo-text font-semibold text-[#1A1615] cursor-pointer'>
+                                    Dreelio
+                                </span>
                         </div>
 
                         {/* Navigation Links */}
                         <div className={`nav-links ${isScrolled ? 'scrolled' : 'not-scrolled'}`}>
-                            <Link
-                                href='#features'
-                                className='nav-link text-[#1A1615] transition-colors font-large'
+                            <GlareHover
+                                glareColor="#ffffff"
+                                glareOpacity={0.5}
+                                glareAngle={-30}
+                                glareSize={300}
+                                transitionDuration={1000}
+                                playOnce={true}
+                                width="auto"
+                                height="auto"
+                                background="transparent"
+                                borderRadius="40px"
+                                borderColor="transparent"
+                                style={{ padding: '10px 20px' }}
                             >
-                                Features
-                            </Link>
-                            <Link
-                                href='#benefits'
-                                className='nav-link text-[#1A1615] transition-colors font-medium'
+                                <Link
+                                    href='#features'
+                                    className='nav-link text-[#1A1615] transition-colors font-large'
+                                >
+                                    Features
+                                </Link>
+                            </GlareHover>
+                            <GlareHover
+                                glareColor="#ffffff"
+                                glareOpacity={0.5}
+                                glareAngle={-30}
+                                glareSize={300}
+                                transitionDuration={1000}
+                                playOnce={true}
+                                width="auto"
+                                height="auto"
+                                background="transparent"
+                                borderRadius="40px"
+                                borderColor="transparent"
+                                style={{ padding: '10px 20px' }}
                             >
-                                Benefits
-                            </Link>
-                            <Link
-                                href='#pricing'
-                                className='nav-link text-[#1A1615] transition-colors font-medium'
+                                <Link
+                                    href='#benefits'
+                                    className='nav-link text-[#1A1615] transition-colors font-medium'
+                                >
+                                    Benefits
+                                </Link>
+                            </GlareHover>
+                            <GlareHover
+                                glareColor="#ffffff"
+                                glareOpacity={0.5}
+                                glareAngle={-30}
+                                glareSize={300}
+                                transitionDuration={1000}
+                                playOnce={true}
+                                width="auto"
+                                height="auto"
+                                background="transparent"
+                                borderRadius="40px"
+                                borderColor="transparent"
+                                style={{ padding: '10px 20px' }}
                             >
-                                Pricing
-                            </Link>
-                            <Link
-                                href='/blog-page'
-                                className='nav-link text-[#1A1615] transition-colors font-medium'
+                                <Link
+                                    href='#pricing'
+                                    className='nav-link text-[#1A1615] transition-colors font-medium'
+                                >
+                                    Pricing
+                                </Link>
+                            </GlareHover>
+                            <GlareHover
+                                glareColor="#ffffff"
+                                glareOpacity={0.5}
+                                glareAngle={-30}
+                                glareSize={300}
+                                transitionDuration={1000}
+                                playOnce={true}
+                                width="auto"
+                                height="auto"
+                                background="transparent"
+                                borderRadius="40px"
+                                borderColor="transparent"
+                                style={{ padding: '10px 20px' }}
                             >
-                                Blog
-                            </Link>
-                            <Link
-                                href='/contact-us'
-                                className='nav-link text-[#1A1615] transition-colors font-medium'
+                                <Link
+                                    href='/blog-page'
+                                    className='nav-link text-[#1A1615] transition-colors font-medium'
+                                >
+                                    Blog
+                                </Link>
+                            </GlareHover>
+                            <GlareHover
+                                glareColor="#ffffff"
+                                glareOpacity={0.5}
+                                glareAngle={-30}
+                                glareSize={300}
+                                transitionDuration={1000}
+                                playOnce={true}
+                                width="auto"
+                                height="auto"
+                                background="transparent"
+                                borderRadius="40px"
+                                borderColor="transparent"
+                                style={{ padding: '10px 20px' }}
                             >
-                                Contact Us
-                            </Link>
+                                <Link
+                                    href='/contact-us'
+                                    className='nav-link text-[#1A1615] transition-colors font-medium'
+                                >
+                                    Contact Us
+                                </Link>
+                            </GlareHover>
                         </div>
 
                         {/* CTA Button */}
-                        <motion.button
-                            className={`
-                                ${isScrolled ? 'px-7' : 'px-6'} py-3
-                                text-base h-[60px]
-                                flex items-center justify-center
-                                bg-[#1A1615] text-white rounded-full font-medium 
-                                hover:bg-[#2A2625] 
-                                transition-all duration-500
-                            `}
-                            style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
+                        <GlareHover
+                            glareColor="#ffffff"
+                            glareOpacity={0.3}
+                            glareAngle={-30}
+                            glareSize={300}
+                            transitionDuration={1000}
+                            playOnce={true}
+                            width="auto"
+                            height="auto"
+                            background="transparent"
+                            borderRadius="9999px"
+                            borderColor="transparent"
                         >
-                            Try Dreelio free
-                        </motion.button>
+                            <motion.button
+                                className={`
+                                    ${isScrolled ? 'px-7' : 'px-6'} py-3
+                                    text-base h-[58px]
+                                    flex items-center justify-center
+                                    bg-[#1A1615] text-white rounded-full font-medium 
+                                    hover:bg-[#2A2625] 
+                                    transition-all duration-500
+                                `}
+                                style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                Try Dreelio free
+                            </motion.button>
+                        </GlareHover>
                     </div>
                 </div>
             </nav>
@@ -215,44 +303,128 @@ const Navbar: React.FC = () => {
                             className='border-t border-gray-100 bg-white'
                         >
                             <div className='px-4 py-4 space-y-3'>
-                                <Link
-                                    href='#features'
-                                    className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
-                                    onClick={() => setIsMobileMenuOpen(false)}
+                                <GlareHover
+                                    glareColor="#ffffff"
+                                    glareOpacity={0.5}
+                                    glareAngle={-30}
+                                    glareSize={300}
+                                    transitionDuration={1000}
+                                    playOnce={false}
+                                    width="auto"
+                                    height="auto"
+                                    background="transparent"
+                                    borderRadius="8px"
+                                    borderColor="transparent"
                                 >
-                                    Features
-                                </Link>
-                                <Link
-                                    href='#benefits'
-                                    className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
-                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    <Link
+                                        href='#features'
+                                        className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        Features
+                                    </Link>
+                                </GlareHover>
+                                <GlareHover
+                                    glareColor="#ffffff"
+                                    glareOpacity={0.5}
+                                    glareAngle={-30}
+                                    glareSize={300}
+                                    transitionDuration={1000}
+                                    playOnce={false}
+                                    width="auto"
+                                    height="auto"
+                                    background="transparent"
+                                    borderRadius="8px"
+                                    borderColor="transparent"
                                 >
-                                    Benefits
-                                </Link>
-                                <Link
-                                    href='#pricing'
-                                    className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
-                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    <Link
+                                        href='#benefits'
+                                        className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        Benefits
+                                    </Link>
+                                </GlareHover>
+                                <GlareHover
+                                    glareColor="#ffffff"
+                                    glareOpacity={0.5}
+                                    glareAngle={-30}
+                                    glareSize={300}
+                                    transitionDuration={1000}
+                                    playOnce={false}
+                                    width="auto"
+                                    height="auto"
+                                    background="transparent"
+                                    borderRadius="8px"
+                                    borderColor="transparent"
                                 >
-                                    Pricing
-                                </Link>
-                                <Link
-                                    href='/blog-page'
-                                    className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
-                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    <Link
+                                        href='#pricing'
+                                        className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        Pricing
+                                    </Link>
+                                </GlareHover>
+                                <GlareHover
+                                    glareColor="#ffffff"
+                                    glareOpacity={0.5}
+                                    glareAngle={-30}
+                                    glareSize={300}
+                                    transitionDuration={1000}
+                                    playOnce={false}
+                                    width="auto"
+                                    height="auto"
+                                    background="transparent"
+                                    borderRadius="8px"
+                                    borderColor="transparent"
                                 >
-                                    Blog
-                                </Link>
-                                <Link
-                                    href='/contact-us'
-                                    className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
-                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    <Link
+                                        href='/blog-page'
+                                        className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        Blog
+                                    </Link>
+                                </GlareHover>
+                                <GlareHover
+                                    glareColor="#ffffff"
+                                    glareOpacity={0.5}
+                                    glareAngle={-30}
+                                    glareSize={300}
+                                    transitionDuration={1000}
+                                    playOnce={false}
+                                    width="auto"
+                                    height="auto"
+                                    background="transparent"
+                                    borderRadius="8px"
+                                    borderColor="transparent"
                                 >
-                                    Contact Us
-                                </Link>
-                                <button className='w-full mt-2 px-6 py-2.5 bg-[#1A1615] text-white rounded-full font-medium hover:bg-[#2A2625] transition-colors'>
-                                    Try Dreelio free
-                                </button>
+                                    <Link
+                                        href='/contact-us'
+                                        className='block py-2 text-[#1A1615] hover:text-gray-600 font-medium'
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        Contact Us
+                                    </Link>
+                                </GlareHover>
+                                <GlareHover
+                                    glareColor="#ffffff"
+                                    glareOpacity={0.3}
+                                    glareAngle={-30}
+                                    glareSize={300}
+                                    transitionDuration={1000}
+                                    playOnce={false}
+                                    width="auto"
+                                    height="auto"
+                                    background="transparent"
+                                    borderRadius="9999px"
+                                    borderColor="transparent"
+                                >
+                                    <button className='w-full mt-2 px-6 py-2.5 bg-[#1A1615] text-white rounded-full font-medium hover:bg-[#2A2625] transition-colors'>
+                                        Try Dreelio free
+                                    </button>
+                                </GlareHover>
                             </div>
                         </motion.div>
                     )}
