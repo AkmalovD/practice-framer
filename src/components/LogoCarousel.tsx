@@ -11,9 +11,9 @@ const imageLogos = [
 function App() {
     return (
         <div className="w-full flex flex-col items-center justify-center bg-[#FFFF] my-32">
-            <p className='text-[#757170] '>Trusted by 7,000+ top startups, freelancers and studios</p>
+            <p className='text-[#757170] text-xl pb-10'>Trusted by 7,000+ top startups, freelancers and studios</p>
 
-            <div className='h-[55px] w-[100vh] relative overflow-hidden'>
+            <div className='h-[55px] w-[110vh] relative overflow-hidden'>
                 {/* Basic horizontal loop */}
                 <LogoLoop
                     logos={imageLogos}
