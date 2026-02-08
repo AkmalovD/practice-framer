@@ -15,7 +15,7 @@ const Devices: React.FC = () => {
 
         setDirection(newIndex > currentIndex ? 1 : -1)
         setActiveTab(newTab)
-    }
+    }   
 
     const tabs = [
         { id: 'mobile', label: 'Mobile App' },
