@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from "react"
-import { AnimatePresence, motion } from "framer-motion"
+import { useState, useRef } from "react"
+import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 
 const Devices: React.FC = () => {
@@ -34,9 +34,17 @@ const Devices: React.FC = () => {
         })
       }
 
+    const sectionRef = useRef<HTMLDivElement>(null)
+
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ['start end', 'end start']
+    })
+
+    const scale = useTransform(scrollYProgress, [0, 0.5], [1.3, 1])
     return (
         <>
-            <section className="py-12 px-4 max-w-7xl mx-auto">
+            <section ref={sectionRef} className="py-12 px-4 max-w-7xl mx-auto">
                 <div className="text-center mb-6">
                     <span className="text-sm text-[#614A44] text-xl font-semibold tracking-wider text-gray-500 uppercase">
                         Seamless across devices
@@ -61,6 +69,7 @@ const Devices: React.FC = () => {
                                   x: { type: 'tween', duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }
                                 }}
                                 className="absolute inset-0"
+                                style={{ scale }}
                             >
                                 <Image
                                     src={activeTab === 'mobile' ? '/mobile-app.webp' : '/web-app.webp'}
