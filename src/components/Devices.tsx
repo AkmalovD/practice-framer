@@ -44,7 +44,7 @@ const Devices: React.FC = () => {
     const scale = useTransform(scrollYProgress, [0, 0.5], [1.3, 1])
     return (
         <>
-            <section ref={sectionRef} className="py-12 px-4 max-w-7xl mx-auto">
+            <section ref={sectionRef} className="py-12 px-4 max-w-6xl mx-auto">
                 <div className="text-center mb-6">
                     <span className="text-sm text-[#614A44] text-xl font-semibold tracking-wider text-gray-500 uppercase">
                         Seamless across devices
