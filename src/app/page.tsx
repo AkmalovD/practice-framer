@@ -4,6 +4,7 @@ import LogoCarousel from "../components/LogoCarousel"
 import Devices from "../components/Devices"
 import Features from "../components/Features"
 import Features2 from "../components/Features2"
+import Benefits from "../components/Benefits"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Devices/>
       <Features/>
       <Features2/>
+      <Benefits/>
     </>
   )
 } 
